@@ -1,0 +1,50 @@
+---
+import { TypeFlags } from "typescript"
+import Python from "./icons/Python.astro"
+
+const TAGS = {
+    PYTHON: {
+        name: "Python",
+        class: "bg-[#003159] text-white",
+        icon: Python
+    },
+}
+
+const PROJECTS = [
+    {
+        title: "Project1",
+        description: "description1",
+        github: "#",
+        image: "public/projects/california_housing.webp",
+        tags: [TAGS.PYTHON]
+    }
+]
+---
+<div class="flex flex-col gap-y-16">
+{
+    PROJECTS.map(({title, description, tags, image}) =>(
+        <article>
+            <h3 class="text-semibold text-2xl text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-3">
+                {tags.map((tag) => (
+                    <li>
+                    <span
+                        class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                    >
+                        <tag.icon class="size-4"/>
+                        {tag.name}
+                    </span>
+                    </li>
+                ))}
+            </ul>
+            <img  
+                loading="lazy"
+                class="shadow-2xl shadow-white/10 "
+                src={image}
+                alt={`Captura de pantalla del proyecto ${image}`}
+            />   
+        </article>
+    ))
+}
+</div>
