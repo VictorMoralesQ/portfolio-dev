@@ -12,39 +12,33 @@ const TAGS = {
 
 const PROJECTS = [
     {
-        title: "Project1",
-        description: "description1",
+        title: "House Price California",
+        description: "A model build to predict a house price of California based in some metrics.",
         github: "#",
         image: "public/projects/california_housing.webp",
         tags: [TAGS.PYTHON]
     }
 ]
 ---
-<div class="flex flex-col gap-y-16">
+<div class="flex flex-col gap-y-16 w-full md:w-full lg:w-1/2 p-3">
 {
-    PROJECTS.map(({title, description, tags, image}) =>(
-        <article>
-            <h3 class="text-semibold text-2xl text-yellow-200 mb-2">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
-            <ul class="flex gap-x-2 flex-row mb-3">
-                {tags.map((tag) => (
-                    <li>
-                    <span
-                        class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                    >
-                        <tag.icon class="size-4"/>
+    PROJECTS.map(({title, description, tags, image, github}) =>(
+    <div class="bg-[#1f1e1d]/85 rounded-lg overflow-hidden shadow-md">
+        <img class="w-full" src={image} alt={title} />
+        <div class="p-4">
+            <h4 class="text-xl font-semibold mb-2">{title}</h4>
+            <p class="text-gray-300/80">{description}</p>
+            <div class="mt-2">
+                {tags.map((tag) =>(
+                    <span class={`inline-flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-3`}>
+                        <tag.icon class="size-4" />
                         {tag.name}
-                    </span>
-                    </li>
+                        </span>
                 ))}
-            </ul>
-            <img  
-                loading="lazy"
-                class="shadow-2xl shadow-white/10 "
-                src={image}
-                alt={`Captura de pantalla del proyecto ${image}`}
-            />   
-        </article>
+            </div>
+            <a href={github} class="mt-4 inline-block bg-[#389547] hover:bg-[#337a35] text-white font-normal py-2 px-4 rounded" target="_blank" rel="noopener noreferrer">See more ></a>
+        </div>
+    </div> 
     ))
 }
 </div>
