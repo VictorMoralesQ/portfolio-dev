@@ -8,9 +8,8 @@ import Github from '../components/icons/Github.astro';
 import Mail from '../components/icons/Mail.astro';
 import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
-import BriefCase from '../components/icons/BriefCase.astro';
-import Code from '../components/icons/Code.astro';
 import Projects from '../components/Projects.astro'
+import About from '../components/About.astro';
 
 ---
 
@@ -20,12 +19,12 @@ import Projects from '../components/Projects.astro'
 	<main class="px-4">
 		<SectionContainer class="py-44 pb-32">
 		<img 
-    	class="rounded-full size-12 mb-3" 
-    	src="../IMG_2774-min.jpeg" 
+    	class="size-24 mb-3 mt-5 rounded-full " 
+    	src="../zyro-image.webp" 
     	alt="vmxrls photo"
     	/>
 		<h1 class="text-black text-2xl md:text-3xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
-			Hey 👋🏻, I'm Víctor Morales <a href="https://www.linkedin.com/in/v%C3%ADctor-morales-5a4403265/" 
+			Hey, I'm Víctor Morales <a href="https://www.linkedin.com/in/v%C3%ADctor-morales-5a4403265/" 
 			target="_blank"
 			rel="noopener" 
 			class="flex justify-center items-center">
@@ -41,18 +40,15 @@ import Projects from '../components/Projects.astro'
 			Passionate about leveraging technology to create innovative solutions.</span>
 			<span class="text-red-400/90"> From Barcelona, Spain.</span>
 		</h2>
-		<nav class="flex gap-5 mt-8 flex-wrap">
+		<nav class="flex gap-5 mt-4 flex-wrap">
 			<SocialPill href="https://www.linkedin.com/in/v%C3%ADctor-morales-5a4403265/">
-				<Linkedin class="size-4 md:size-6"/>
-				LinkedIn
+				<Linkedin class="size-5 md:size-4 lg:size-4"/>
 			</SocialPill>
 			<SocialPill href="https://github.com/VictorMoralesQ">
-				<Github class="size-4 md:size-6"/>
-				GitHub
+				<Github class="size-5 md:size-4 lg:size-4"/>
 			</SocialPill>
 			<SocialPill href="mailto:victormorales1999@gmail.com">
-				<Mail class="size-4 md:size-6"/>
-				victormorales1999@gmail.com
+				<Mail class="size-5 md:size-4 lg:size-4"/>
 			</SocialPill>
 		</nav>
 		</SectionContainer>
@@ -69,6 +65,14 @@ import Projects from '../components/Projects.astro'
 				PROJECTS
 			</h2>
 			<Projects/>
+		</SectionContainer>
+		
+		
+		<SectionContainer id="about">
+			<h2 class=" text-black text-3xl font-semibold mb-6 flex gap-x-3 items-center justify-center">
+				ABOUT
+			</h2>
+			<About/>
 		</SectionContainer>
 			
 			
