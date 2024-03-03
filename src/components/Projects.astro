@@ -2,6 +2,9 @@
 import { TypeFlags } from "typescript"
 import Python from "./icons/Python.astro"
 import Github from "./icons/Github.astro"
+import Javascript from "./icons/Javascript.astro"
+import Tailwind from "./icons/Tailwind.astro"
+
 
 const TAGS = {
     PYTHON: {
@@ -9,22 +12,46 @@ const TAGS = {
         class: "bg-[#003159] text-white",
         icon: Python
     },
+    ASTRO: {
+        name: "Astro",
+        class: "bg-black text-white",
+        icon: Astro
+    },
+    JAVASCRIPT: {
+        name: "Javascript",
+        class: "bg-black text-white",
+        icon: Javascript
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-white",
+        icon: Tailwind
+    },
 }
 
 const PROJECTS = [
     {
         title: "House Price California",
-        description: "A model build to predict a house price of California based in some metrics.",
+        description: "A model build with Python library SkLearn to predict a house price of California based in some metrics.",
         github: "https://github.com/VictorMoralesQ/california_housing",
-        image: "public/projects/california_housing.webp",
+        image: "/projects/california_housing.webp",
         tags: [TAGS.PYTHON]
-    }
+    },
+    {
+        title: "Clone Landing Page KnowEats",
+        description: "Clone of the landing page of Knoweats with Astro, JS and Tailwind CSS with educational fines.",
+        github: "https://github.com/VictorMoralesQ/clone_knoweats_astro",
+        image: "/projects/clone_knoweats.webp",
+        tags: [TAGS.JAVASCRIPT, TAGS.TAILWIND]
+    },
+   
 ]
 ---
-<div class="flex flex-col gap-y-16 w-full md:w-full lg:w-1/2 p-3">
+<div class="grid grid-cols-2 gap-x-4 gap-y-16 w-full p-3">
+   
 {
     PROJECTS.map(({title, description, tags, image, github}) =>(
-    <div class="bg-[#1f1e1d]/75 rounded-lg overflow-hidden shadow-md">
+    <div class="col-span-1 w-full bg-[#1f1e1d]/75 rounded-lg overflow-hidden shadow-md">
         <img class="w-full" src={image} alt={title} />
         <div class="p-4">
             <h4 class="text-xl font-semibold mb-2">{title}</h4>
@@ -37,11 +64,14 @@ const PROJECTS = [
                         </span>
                 ))}
             </div>
-            <a href={github} class="mt-4 flex justify-center rounded bg-[#389547] hover:bg-[#337a35] text-white font-normal py-2 px-4" target="_blank" rel="noopener noreferrer">
-                <Github class="size-5 flex flex-row my-auto mr-2"></Github>    
-                Source code ></a>
+            <footer class="mt-4">
+                <a href={github} class="flex justify-center rounded bg-[#389547] hover:bg-[#337a35] text-white font-normal py-2 px-4" target="_blank" rel="noopener noreferrer">
+                    <Github class="size-5 flex flex-row my-auto mr-2"></Github>    
+                    Source code ></a>
+            </footer>
         </div>
     </div> 
     ))
 }
+
 </div>
