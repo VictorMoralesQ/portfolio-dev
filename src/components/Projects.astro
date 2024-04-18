@@ -4,6 +4,7 @@ import Python from "./icons/Python.astro"
 import Github from "./icons/Github.astro"
 import Javascript from "./icons/Javascript.astro"
 import Tailwind from "./icons/Tailwind.astro"
+import IconAstro from "./icons/IconAstro.astro"
 
 
 const TAGS = {
@@ -14,16 +15,16 @@ const TAGS = {
     },
     ASTRO: {
         name: "Astro",
-        class: "bg-black text-white",
-        icon: Astro
+        class: "bg-violet-500 text-white",
+        icon: IconAstro
     },
     JAVASCRIPT: {
         name: "Javascript",
-        class: "bg-black text-white",
+        class: "bg-yellow-200 text-black",
         icon: Javascript
     },
     TAILWIND: {
-        name: "Tailwind CSS",
+        name: "Tailwind",
         class: "bg-[#003159] text-white",
         icon: Tailwind
     },
@@ -42,7 +43,7 @@ const PROJECTS = [
         description: "Clone of the landing page of Knoweats with Astro, JS and Tailwind CSS with educational fines.",
         github: "https://github.com/VictorMoralesQ/clone_knoweats_astro",
         image: "/projects/clone_knoweats.webp",
-        tags: [TAGS.JAVASCRIPT, TAGS.TAILWIND]
+        tags: [TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.ASTRO]
     },
    
 ]
@@ -51,15 +52,15 @@ const PROJECTS = [
    
 {
     PROJECTS.map(({title, description, tags, image, github}) =>(
-    <div class="col-span-1 w-full bg-[#1f1e1d]/75 rounded-lg overflow-hidden shadow-md">
+    <div class="col-span-1 w-full rounded-lg overflow-hidden">
         <img class="w-full" src={image} alt={title} />
         <div class="p-4">
-            <h4 class="text-xl font-semibold mb-2">{title}</h4>
-            <p class="text-gray-300/80">{description}</p>
-            <div class="mt-2">
+            <h4 class="text-xl text-black font-semibold mb-2">{title}</h4>
+            <p class="text-black/80 text-wrap">{description}</p>
+            <div class="mt-2 flex flex-row gap-x-2">
                 {tags.map((tag) =>(
-                    <span class={`inline-flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-3`}>
-                        <tag.icon class="size-5" />
+                    <span class={`inline-flex gap-x-1 rounded-full text-xs ${tag.class} py-1 px-3`}>
+                        <tag.icon class="size-4" />
                         {tag.name}
                         </span>
                 ))}
