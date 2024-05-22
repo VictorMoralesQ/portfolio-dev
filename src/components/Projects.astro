@@ -5,6 +5,8 @@ import Github from "./icons/Github.astro"
 import Javascript from "./icons/Javascript.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import IconAstro from "./icons/IconAstro.astro"
+import Excel from "./icons/Excel.astro"
+import Tableau from "./icons/Tableau.astro"
 
 
 const TAGS = {
@@ -28,6 +30,16 @@ const TAGS = {
         class: "bg-[#003159] text-white",
         icon: Tailwind
     },
+    EXCEL: {
+        name: "Excel",
+        class: "bg-[#4cba79] text-white",
+        icon: Excel
+    },
+    TABLEAU: {
+        name: "Tableau",
+        class: "bg-[#7679e0] text-white",
+        icon: Tableau
+    }
 }
 
 const PROJECTS = [
@@ -45,6 +57,13 @@ const PROJECTS = [
         image: "/projects/clone_knoweats.webp",
         tags: [TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.ASTRO]
     },
+    {
+        title: "Twitter Sentiment Analysis",
+        description: "A model build with Python library to predict a tweet sentiment based in some metrics.",
+        github: "https://github.com/VictorMoralesQ/twitter_project",
+        image: "/projects/dashboard_twitter.webp",
+        tags: [TAGS.PYTHON, TAGS.EXCEL, TAGS.TABLEAU]
+    }
    
 ]
 ---
